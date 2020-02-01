@@ -1,19 +1,12 @@
-// This is free and unencumbered software released into the public domain.
-// See LICENSE.md for more information.
-
-
-(function(global) {
-  'use strict';
-
 /* ----------------- Однострочники ------------------ */
-  function f(e) {return entry().field(e)}
-  function twoF(e) {return Math.round((e+0.00001)*100)/100}
-  function fe(p,e) {return p.field(e)}
-  function mTime(e) {return moment(e).format("HH:mm:ss")}
-  function mDate(e) {return moment(e).format("DD.MM.YYYY")}
+  var f = function (e) {return entry().field(e)}
+  var twoF = function (e) {return Math.round((e+0.00001)*100)/100}
+  var fe = function (p,e) {return p.field(e)}
+  var mTime = function (e) {return moment(e).format("HH:mm:ss")}
+  var mDate = function (e) {return moment(e).format("DD.MM.YYYY")}
 
 /* ---------------- Сложные функции ---------------- */
-  function decode(text, charset){
+  var decode = function (text, charset){
     var decoder = new TextDecoder(charset);
     var uint = new Uint8Array(text.length);
     for (var i=0, j=text.length;i<j;++i) {
@@ -21,5 +14,4 @@
     }
     return decoder.decode(uint);
   }
-
-}(this || {}));
+};
